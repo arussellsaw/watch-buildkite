@@ -9,6 +9,7 @@ import (
 	"github.com/machinebox/graphql"
 	"os"
 	"os/exec"
+	"strings"
 	"time"
 )
 
@@ -47,7 +48,7 @@ func main() {
 			}
 		}
 	}`)
-	req.Var("branch", "manage-repositories-page")
+	req.Var("branch", strings.TrimSpace(buf.String()))
 	req.Header.Set("Authorization", "Bearer "+os.Getenv("BUILDKITE_TOKEN"))
 
 	ctx := context.Background()
