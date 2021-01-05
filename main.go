@@ -5,7 +5,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/apoorvam/goterminal"
-	"github.com/knq/emoji"
+	"github.com/kenshaw/emoji"
 	"github.com/machinebox/graphql"
 	"os"
 	"os/exec"
@@ -83,7 +83,7 @@ func statusEmoji(status ,exit string) string {
 		}
 		return "✅"
 	case "RUNNING":
-		return "⏱ "
+		return "⏱"
 	case "CANCELING","CANCELED":
 		return "❌"
 	case "ASSIGNED":
